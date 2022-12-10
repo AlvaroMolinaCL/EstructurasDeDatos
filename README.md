@@ -16,12 +16,12 @@ Este repositorio contiene material de estudio, códigos y ejercicios resueltos p
 ### Implementaciones
 
 #### Tipos abstractos de datos
-1. Pilas / Stacks
-2. Filas o Colas / Queues
-3. Listas / Lists
+1. [Pilas / Stacks](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/stacksPilas)
+2. [Filas o Colas / Queues](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/queuesFilas)
+3. [Listas / Lists](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/listsListas)
 
 #### Estructuras de datos
-1. Tabla Hash / Hash Table
+1. [Tabla Hash / Hash Table](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/tablaHash)
 
 ### Algoritmos de ordenamiento
 
