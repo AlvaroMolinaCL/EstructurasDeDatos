@@ -21,8 +21,8 @@ HashTable::~HashTable() // Destructor de la tabla hash
 int HashTable::hash(key_t k) // Función que direcciona los elementos a los índices de la tabla hash
 {
     /* Aritmética modular */
-    // int i = k % MAX; // Se divide la clave recibida por el tamaño máximo de la tabla hash y se extrae su módulo
-    // return i; // Se retorna el índice de la tabla hash asignado al elemento
+    int i = k % MAX; // Se divide la clave recibida por el tamaño máximo de la tabla hash y se extrae su módulo
+    return i; // Se retorna el índice de la tabla hash asignado al elemento
     /* Método de la multiplicación */
     // double Rk = R * k; // Se multiplica una constante decimal (0 < R < 1) por la clave recibida
     // double parteDecimal, parteEntera; // Se declaran variables para extraer parte decimal y entera de Rk
