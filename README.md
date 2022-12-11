@@ -25,4 +25,6 @@ Este repositorio contiene material de estudio, códigos y ejercicios resueltos p
 
 ### Algoritmos de ordenamiento
 
+1. [Algoritmos de ordenamiento](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/algoritmosOrdenamiento)
+
 ### Ejercicios resueltos
