@@ -2,7 +2,7 @@
 
 Este repositorio contiene material de estudio, códigos y ejercicios resueltos por mí en el curso de Estructuras de Datos (IN1069C) impartido en la UCSC (específicamente en el semestre 2022-1).
 
-**Importante**: Todos los códigos se encuentran en lenguaje de programación C++, que fue el que se usó en dicho curso.
+**Importante**: Todos los códigos se encuentran en lenguaje de programación C++, que fue el utilizado en dicho curso.
 
 ## Contenidos
 
