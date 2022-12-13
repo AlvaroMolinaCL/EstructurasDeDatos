@@ -1,3 +1,5 @@
+/* Algoritmos de ordenamiento */
+
 #ifndef SORT_HPP
 #define SORT_HPP
 

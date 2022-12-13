@@ -1,6 +1,9 @@
+/* Algoritmos de ordenamiento */
+
 #include <cstdlib>
 #include "sort.hpp"
 
+/* Algoritmo Swap (o de permutación, usado por Selection Sort y Bubble Sort) */
 void swap(int *x, int *y)
 {
     int aux;
@@ -9,6 +12,7 @@ void swap(int *x, int *y)
     *y = aux;
 }
 
+/* Algoritmo Merge (usado por Merge Sort) */
 void merge(int a[], int p, int q, int r)
 {
     int n1 = q - p + 1;
@@ -25,10 +29,7 @@ void merge(int a[], int p, int q, int r)
         M[j] = a[q + 1 + j];
     }
 
-    int i, j, k;
-    i = 0;
-    j = 0;
-    k = p;
+    int i = 0, j = 0, k = p;
 
     while (i < n1 && j < n2)
     {
@@ -60,21 +61,21 @@ void merge(int a[], int p, int q, int r)
     }
 }
 
+/* Algoritmo Selection Sort */
 void mergeSort(int a[], int l, int r)
 {
     if (l < r)
     {
-        // m is the point where the aay is divided into two subaays
-        int m = l + (r - l) / 2;
+        int m = l + (r - l) / 2; // m es el punto donde el arreglo se divide en dos subarreglos
 
         mergeSort(a, l, m);
         mergeSort(a, m + 1, r);
 
-        // Merge the sorted subaays
-        merge(a, l, m, r);
+        merge(a, l, m, r); // Se combinan los subarreglos ya ordenados
     }
 }
 
+/* Algoritmo Selection Sort */
 void selectionSort(int a[], int n)
 {
     for (int i = 0; i < n - 1; i++)
@@ -91,6 +92,7 @@ void selectionSort(int a[], int n)
     }
 }
 
+/* Algoritmo Insertion Sort */
 void insertionSort(int a[], int n)
 {
     for (int i = 1; i < n; i++)
@@ -106,6 +108,7 @@ void insertionSort(int a[], int n)
     }
 }
 
+/* Algoritmo Bubble Sort */
 void bubbleSort(int a[], int n)
 {
     for (int i = 0; i < n - 1; i++)
@@ -120,6 +123,7 @@ void bubbleSort(int a[], int n)
     }
 }
 
+/* Algoritmo Gnome Sort */
 void gnomeSort(int a[], int n)
 {
     int i = 0;
