@@ -1,12 +1,14 @@
+/* Ejemplo de una clase en C++ */
+
 #include <iostream>
 
-class Circulo
+class Circulo // Se crea una clase llamada Circulo
 {
-private:
-    // Atributos
+private: // Atríbutos y métodos privados (que solo pueden ser usados dentro de la clase en que son declarados)
+    /* Atributos */
     float radio;
 
-public:
+public: // Atríbutos y métodos públicos (que pueden ser usados por cualquier objeto o instancia externa a la clase)
     /*
     void setRadio(float radio)
     {
@@ -15,7 +17,8 @@ public:
     }
     */
 
-    Circulo(float radio)
+    /* Métodos */
+    Circulo(float radio) // Constructor de la clase
     {
         // radio = radio;
         this->radio = radio;
@@ -23,25 +26,24 @@ public:
 
     float getRadio()
     {
-        return radio;
+        return radio; // Se retorna el valor del radio
     }
 
-    // Métodos
     float perimetro()
     {
-        return 2 * 3.1415 * radio;
+        return 2 * 3.1415 * radio; // Se retorna el valor del perímetro
     }
 };
 
 int main(int argc, char const *argv[])
 {
     // class Circulo miCirculo
-    Circulo miCirculo = Circulo(7);
+    Circulo miCirculo = Circulo(7); // Se crea un objeto miCirculo a partir de la clase Circulo con radio = 7
     // miCirculo.setRadio(4);
-    miCirculo.perimetro();
+    miCirculo.perimetro(); // Se llama al método para cálcular el perímetro de miCirculo
 
-    std::cout << miCirculo.getRadio() << "\n";
-    std::cout << miCirculo.perimetro() << "\n";
+    std::cout << miCirculo.getRadio() << std::endl;  // Se imprime por pantalla el valor del radio
+    std::cout << miCirculo.perimetro() << std::endl; // Se imprime por pantalla el valor del perímetro
 
     return 0;
 }
