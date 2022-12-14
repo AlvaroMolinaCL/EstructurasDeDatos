@@ -8,8 +8,7 @@ Este repositorio contiene material de estudio, códigos y ejercicios resueltos p
 
 ### Funciones
 
-1. Funciones por valor y referencia
-2. Funciones iterativas y recursivas
+1. [Funciones iterativas y recursivas](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/funciones)
 
 ### Asignación dinámica de memoria
 
@@ -22,9 +21,12 @@ Este repositorio contiene material de estudio, códigos y ejercicios resueltos p
 
 #### Estructuras de datos
 1. [Tabla Hash / Hash Table](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/tablaHash)
+2. Árboles / Trees
 
 ### Algoritmos de ordenamiento
 
 1. [Algoritmos de ordenamiento](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/algoritmosOrdenamiento)
 
 ### Ejercicios resueltos
+
+1. [Ejercicios resueltos](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/ejerciciosResueltos)
