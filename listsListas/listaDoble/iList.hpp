@@ -9,9 +9,9 @@ typedef unsigned int index_t; // Se define el tipo para los índices de la lista
 class iList // Aquí se define el contrato de la lista (las operaciones mínimas que debe poder realizar)
 {
 public:
-    virtual void add(element_t) = 0;          // Opción para insertar un elemento al final de la lista
+    virtual void add(element_t) = 0;          // Opción para insertar un elemento al final de la lista (_tail)
     virtual void add(element_t, index_t) = 0; // Opción para insertar un elemento en una posición específica de la lista
-    virtual void remove() = 0;                // Opción para eliminar un elemento del final de la lista
+    virtual void remove() = 0;                // Opción para eliminar un elemento del principio de la lista (_head)
     virtual void remove(element_t) = 0;       // Opción para eliminar un elemento específico de la lista
     virtual index_t size() = 0;               // Opción para conocer el tamaño de la lista
     virtual bool empty() = 0;                 // Opción para consultar si la lista está vacía o no
