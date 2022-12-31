@@ -22,7 +22,7 @@ int HashTable::hash(key_t k) // Función que direcciona los elementos a los índ
 {
     /* Aritmética modular */
     int i = k % MAX; // Se divide la clave recibida por el tamaño máximo de la tabla hash y se extrae su módulo
-    return i; // Se retorna el índice de la tabla hash asignado al elemento
+    return i;        // Se retorna el índice de la tabla hash asignado al elemento
     /* Método de la multiplicación */
     // double Rk = R * k; // Se multiplica una constante decimal (0 < R < 1) por la clave recibida
     // double parteDecimal, parteEntera; // Se declaran variables para extraer parte decimal y entera de Rk
@@ -44,6 +44,8 @@ int HashTable::hash(key_t k) // Función que direcciona los elementos a los índ
     // }
     // return i; // Se retorna el índice de la tabla hash asignado al elemento
     /* Método del plegamiento */
+    // -- Pendiente --
+    /* Resolución de colisiones */
     // -- Pendiente --
 };
 
@@ -77,7 +79,7 @@ bool HashTable::empty() // Opción para consultar si la tabla hash está vacía 
     {
         return true; // Se retorna verdadero
     }
-    else // En caso contrario a lo indicado en la línea --
+    else // En caso contrario a lo indicado en la línea 76
     {
         return false; // Se retorna falso
     }
