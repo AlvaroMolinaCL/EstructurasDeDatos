@@ -1,3 +1,5 @@
+/* Ejemplo de uso del árbol binario de búsqueda (se usa como ejemplo el árbol de la imagen ejemploArbolBinarioBusqueda.png)*/
+
 #include <iostream>
 #include "SBinaryTree.hpp"
 
@@ -5,26 +7,35 @@ int main(int argc, char const *argv[])
 {
     iSBinTree *myTree = new SBinaryTree();
 
-    myTree->insert(15);
+    myTree->insert(2);
+    myTree->insert(4);
+    myTree->insert(19);
+    myTree->insert(1);
+    myTree->insert(22);
     myTree->insert(9);
+    myTree->insert(11);
+    myTree->insert(8);
+    myTree->insert(10);
+    myTree->remove(19);
+    myTree->remove(22);
     myTree->insert(6);
-    myTree->insert(14);
-    myTree->insert(13);
-    myTree->insert(20);
-    myTree->insert(17);
-    myTree->insert(64);
-    myTree->insert(26);
-    myTree->insert(72);
+    myTree->remove(11);
+    myTree->insert(5);
+    myTree->insert(7);
+    myTree->insert(3);
+    myTree->remove(2);
 
     std::cout << "-- Recorrido Arbol Binario de Busqueda --" << std::endl;
     std::cout << "Pre-orden: ";
-    myTree->preOrderPrint();
+    myTree->preOrder();
     std::cout << std::endl
               << "In-orden: ";
-    myTree->inOrderPrint();
+    myTree->inOrder();
     std::cout << std::endl
               << "Post-orden: ";
-    myTree->postOrderPrint();
+    myTree->postOrder();
+
+    free(myTree);
 
     return 0;
 }

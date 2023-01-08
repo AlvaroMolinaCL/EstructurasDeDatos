@@ -15,18 +15,21 @@ struct sbtNode // Estructura para los nodos del árbol binario de búsqueda
 class iSBinTree // Aquí se define el contrato del árbol binario de búsqueda (las operaciones mínimas que debe poder realizar)
 {
 public:
-    virtual void Delete() = 0;                         // Opción para eliminar un nodo del árbol binario de búsqueda
-    virtual void Delete(sbtNode *) = 0;                // Operación de eliminación de un nodo del árbol binario de búsqueda
-    virtual void insert(element_t) = 0;                // Opción para insertar un nodo al árbol binario de búsqueda
+    virtual void Delete(sbtNode *) = 0;                // Operación de eliminación (o destrucción) del árbol binario de búsqueda
+    virtual void Delete() = 0;                         // Opción para eliminar (o destruir) el árbol binario de búsqueda
     virtual void insert(element_t, sbtNode *) = 0;     // Operación de inserción de un nodo al árbol binario de búsqueda
-    virtual sbtNode *search(element_t) = 0;            // Opción para buscar un nodo en el árbol binario de búsqueda
+    virtual void insert(element_t) = 0;                // Opción para insertar un nodo al árbol binario de búsqueda
+    virtual sbtNode *minValue(sbtNode *n) = 0;         // Operación que retorna el valor mínimo de un subárbol
+    virtual sbtNode *remove(sbtNode *, element_t) = 0; // Operación de eliminación de un nodo del árbol binario de búsqueda
+    virtual sbtNode *remove(element_t) = 0;            // Opción para eliminar un nodo del árbol binario de búsqueda
     virtual sbtNode *search(element_t, sbtNode *) = 0; // Operación de búsqueda de un nodo en el árbol binario de búsqueda
+    virtual sbtNode *search(element_t) = 0;            // Opción para buscar un nodo en el árbol binario de búsqueda
     virtual void preOrder(sbtNode *) = 0;              // Opción para recorrer el árbol en pre-orden
-    virtual void preOrderPrint() = 0;                  // Opción para imprimir por pantalla el recorrido del árbol en pre-orden
+    virtual void preOrder() = 0;                       // Opción para imprimir por pantalla el recorrido del árbol en pre-orden
     virtual void inOrder(sbtNode *) = 0;               // Opción para recorrer el árbol en in-orden
-    virtual void inOrderPrint() = 0;                   // Opción para imprimir por pantalla el recorrido del árbol en in-orden
+    virtual void inOrder() = 0;                        // Opción para imprimir por pantalla el recorrido del árbol en in-orden
     virtual void postOrder(sbtNode *) = 0;             // Opción para recorrer el árbol en post-orden
-    virtual void postOrderPrint() = 0;                 // Opción para imprimir por pantalla el recorrido del árbol en post-orden
+    virtual void postOrder() = 0;                      // Opción para imprimir por pantalla el recorrido del árbol en post-orden
 };
 
 #endif
