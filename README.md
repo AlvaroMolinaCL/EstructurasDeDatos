@@ -21,7 +21,7 @@ Este repositorio contiene material de estudio, códigos y ejercicios resueltos p
 
 #### Estructuras de datos
 1. [Tabla Hash / Hash Table](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/tablaHash)
-2. Árboles / Trees
+2. [Árboles / Trees](https://github.com/AlvaroMolinaCL/EstructurasDeDatos/tree/main/arbolesTrees)
 
 ### Algoritmos de ordenamiento
 
