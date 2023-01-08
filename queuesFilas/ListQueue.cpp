@@ -18,19 +18,19 @@ ListQueue::~ListQueue() // Destructor de la fila
 void ListQueue::enqueue(element_t ele) // Opción para insertar un elemento a la fila
 {
     qNode *aux;                           // Se crea un puntero (o nodo) auxiliar
-    aux = (qNode *)malloc(sizeof(qNode)); // Se crea el nodo auxiliar
-    aux->ele = ele;                       // Se coloca el elemento
-    if (_front = nullptr)
+    aux = (qNode *)malloc(sizeof(qNode)); // Se reserva memoria para el nodo auxiliar, con esto se crea un nuevo nodo
+    aux->ele = ele;                       // El dato guardado en el nodo auxiliar es asignado al nodo de destino
+    if (_front = nullptr)                 // Si la fila no tiene frente
     {
-        _front = aux;
+        _front = aux; // El frente de la fila es asignado como el nodo auxiliar
     }
-    else
+    else // En caso contrario a lo indicado en la línea 23
     {
-        _back->next = aux;
+        _back->next = aux; // El siguiente del último de la fila es asignado como el nodo auxiliar
     }
-    aux->next = nullptr;
-    _back = aux;
-    _size++; // Se incrementa el tamaño de la fila
+    aux->next = nullptr; // El siguiente del nodo auxiliar es asignado como nulo
+    _back = aux;         // El último de la fila es asignado como el nodo auxiliar
+    _size++;             // Se incrementa el tamaño de la fila
 };
 
 void ListQueue::dequeue() // Opción para eliminar un elemento de la fila

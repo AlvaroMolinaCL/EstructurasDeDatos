@@ -17,68 +17,69 @@ DLinkedList::~DLinkedList() // Destructor de la lista
 
 void DLinkedList::add(element_t ele) // Opción para insertar un elemento al final de la lista
 {
-    dlNode *aux;
-    aux = (dlNode *)malloc(sizeof(dlNode));
-    aux->ele = ele;
-    aux->back = nullptr;
-    aux->next = _head;
-    _head->back = aux;
-    _head = aux;
-    _size++;
+    dlNode *aux;                            // Se crea un puntero (o nodo) auxiliar
+    aux = (dlNode *)malloc(sizeof(dlNode)); // Se reserva memoria para el nodo auxiliar, con esto se crea un nuevo nodo
+    aux->ele = ele;                         // El dato guardado en el nodo auxiliar es asignado al nodo de destino
+    aux->back = nullptr;                    // El anterior del nodo auxiliar es asignado como nulo
+    aux->next = _head;                      // El siguiente del nodo auxiliar es asignado como la nueva cabeza de la lista
+    _head->back = aux;                      // El anterior de la cabeza de la lista es asignada como el nodo auxiliar
+    _head = aux;                            // La cabeza de la lista es asignado como el nodo auxiliar, con esto ya queda insertado el nuevo nodo
+    _size++;                                // Se incrementa el tamaño de la lista
 };
 
 void DLinkedList::add(element_t ele, index_t i) // Opción para insertar un elemento en una posición específica de la lista
 {
-    dlNode *aux;
-    aux = (dlNode *)malloc(sizeof(dlNode));
-    aux->ele = ele;
-    if (_head == nullptr && _tail == nullptr)
+    dlNode *aux;                              // Se crea un puntero (o nodo) auxiliar
+    aux = (dlNode *)malloc(sizeof(dlNode));   // Se reserva memoria para el nodo auxiliar, con esto se crea un nuevo nodo
+    aux->ele = ele;                           // El dato guardado en el nodo auxiliar es asignado al nodo de destino
+    if (_head == nullptr && _tail == nullptr) // Si la lista está vacía
     {
-        _head = aux;
-        _tail = aux;
-        aux->back = nullptr;
-        aux->next = nullptr;
+        _head = aux;         // La cabeza de la lista es asignado como el nodo auxiliar
+        _tail = aux;         // El último de la lista es asignado como el nodo auxiliar
+        aux->back = nullptr; // El anterior del nodo auxiliar es asignado como nulo
+        aux->next = nullptr; // El siguiente del nodo auxiliar es asignado como nulo
     }
-    else
+    else // En caso contrario a lo indicado en la línea 35
     {
-        aux->back = _tail;
-        _tail = aux;
-        _tail->next = aux;
-        aux->next = nullptr;
-        _tail = aux;
+        aux->back = _tail;   // El anterior del nodo auxiliar es asignado como el último de la lista
+        _tail = aux;         // El último de la lista es asignado como el nodo auxiliar
+        _tail->next = aux;   // El siguiente del último de la lista es asignado como el nodo auxiliar
+        aux->next = nullptr; // El siguiente del nodo auxiliar es asignado como nulo
+        _tail = aux;         // El último de la lista es asignado como el nodo auxiliar, con esto ya queda insertado el nuevo nodo en el índice i de la lista
     }
-    _size++;
+    _size++; // Se incrementa el tamaño de la lista
 };
 
 void DLinkedList::remove() // Opción para eliminar un elemento del final de la lista
 {
-    dlNode *aux;
-    aux = _head;
-    _head->back = nullptr;
-    free(aux);
-    _size--;
+    dlNode *aux;           // Se crea un puntero (o nodo) auxiliar
+    aux = _head;           // El nodo auxiliar es asignado como la cabeza de la lista
+    _head->back = nullptr; // El anterior de la cabeza de la lista es asignado como nulo
+    free(aux);             // Se libera la memoria ocupada en la posición del nodo auxiliar, y se elimina el nodo
+    _size--;               // Se decrementa el tamaño de la lista
 };
 
 void DLinkedList::remove(element_t ele) // Opción para eliminar un elemento específico de la lista
 {
-    dlNode *aux;
-    aux = _head;
-    if (_head == nullptr)
+    dlNode *aux;          // Se crea un puntero (o nodo) auxiliar
+    aux = _head;          // El nodo auxiliar es asignado como la cabeza de la lista
+    if (_head == nullptr) // Si la lista no tiene cabeza asignada
     {
-        while (aux != nullptr)
+        while (aux != nullptr) // Mientras el nodo auxiliar no recorra toda la lista
         {
-            if (aux->ele == ele)
+            if (aux->ele == ele) // Si el nodo auxiliar encuentra el elemento a eliminar
             {
-                dlNode *aux1, *aux2; // Se debe validar
-                aux1 = aux->back;
-                aux2 = aux->next;
-                aux1->next = aux2;
-                aux2->back = aux1;
-                free(aux);
-                return; // Para terminar la función
+                /* Queda pendiente implementar validación */
+                dlNode *aux1, *aux2; // Se crean otros dos punteros (o nodos) auxiliares
+                aux1 = aux->back;    // El nodo auxiliar 1 es asignado como el anterior del nodo auxiliar principal
+                aux2 = aux->next;    // El nodo auxiliar 2 es asignado como el siguiente del nodo auxiliar principal
+                aux1->next = aux2;   // El siguiente del nodo auxiliar 1 es asignado como el nodo auxiliar 2
+                aux2->back = aux1;   // El anterior del nodo auxiliar 2 es asignado como el nodo auxiliar 2
+                free(aux);           // Se libera la memoria ocupada en la posición del nodo auxiliar principal, y se elimina el nodo
+                return;              // Se hace un retorno para terminar la función
             }
-            aux = aux->next;
-            _size--;
+            aux = aux->next; // El nodo auxiliar principal es asignado como su respectivo siguiente
+            _size--;         // Se decrementa el tamaño de la lista
         }
     }
 };
@@ -107,40 +108,40 @@ element_t DLinkedList::get() // Opción para obtener el primer elemento de la li
 
 element_t DLinkedList::get(index_t i) // Opción para obtener un elemento específico de la lista
 {
-    dlNode *aux;
-    aux = _head;
-    if (i < _size && _head != nullptr)
+    dlNode *aux;                       // Se crea un puntero (o nodo) auxiliar
+    aux = _head;                       // El nodo auxiliar es asignado como la cabeza de la lista
+    if (i < _size && _head != nullptr) // Si el índice de la lista es menor que el tamaño de la lista, y la misma no tiene cabeza asignada
     {
-        for (int k = 0; k < 1; k++)
+        for (int k = 0; k < 1; k++) // Ciclo
         {
-            aux = aux->next;
+            aux = aux->next; // El nodo auxiliar es asignado como su respectivo siguiente
         }
-        return aux->ele;
+        return aux->ele; // Se retorna el elemento ya encontrado
     }
-    else
+    else // En caso contrario a lo indicado en la línea 113
     {
-        return false;
+        return false; // Se retorna falso
     }
 };
 
 bool DLinkedList::contains(element_t ele) // Opción para consultar si un elemento existe o no en la lista
 {
-    dlNode *aux;
-    aux = _head;
-    if (_head != nullptr)
+    dlNode *aux;          // Se crea un puntero (o nodo) auxiliar
+    aux = _head;          // El nodo auxiliar es asignado como la cabeza de la lista
+    if (_head != nullptr) // Si la lista tiene cabeza asignada
     {
-        while (aux != nullptr)
+        while (aux != nullptr) // Mientras el nodo auxiliar no recorra toda la lista
         {
-            if (aux->ele == ele)
+            if (aux->ele == ele) // Si el nodo auxiliar encuentra el elemento buscado
             {
-                return true;
+                return true; // Se retorna verdadero
             }
-            aux = aux->next;
+            aux = aux->next; // El nodo auxiliar es asignado como su respectivo siguiente (si la condición anterior no se cumple)
         }
     }
-    else
+    else // En caso contrario a lo indicado en la línea 131
     {
-        return false;
+        return false; // Se retorna falso
     }
 };
 

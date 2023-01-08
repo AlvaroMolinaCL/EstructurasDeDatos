@@ -23,28 +23,71 @@ int HashTable::hash(key_t k) // Función que direcciona los elementos a los índ
     /* Aritmética modular */
     int i = k % MAX; // Se divide la clave recibida por el tamaño máximo de la tabla hash y se extrae su módulo
     return i;        // Se retorna el índice de la tabla hash asignado al elemento
+
     /* Método de la multiplicación */
-    // double Rk = R * k; // Se multiplica una constante decimal (0 < R < 1) por la clave recibida
-    // double parteDecimal, parteEntera; // Se declaran variables para extraer parte decimal y entera de Rk
-    // parteDecimal = modf(Rk, &parteEntera); // Se usa la función modf de la biblioteca cmath para extraer la parte decimal y entera de Rk
-    // int i = parteEntera * MAX; // Se multiplica la parte entera de Rk por el tamaño máximo de la tabla hash
-    // return i; // Se retorna el índice de la tabla hash asignado al elemento
+    // double Rk = R * k - floor(R * k); // Se multiplica una constante decimal (0 < R < 1) por la clave recibida
+    // int i = floor(MAX * Rk);          // Se multiplica el resultado obtenido anteriormente por el tamaño máximo de la tabla, y se convierte a entero
+    // return i;                         // Se retorna el índice de la tabla hash asignado al elemento
+
     /* Método de la mitad del cuadrado */
-    // -- Revisar --
-    // double i = k * k; // Se eleva la clave al cuadrado
-    // if (i < MAX)
+    // long int k2 = k * k;                                                // Se eleva la clave al cuadrado
+    // int k2Len = 0;                                                      // Se declara variable para almacenar la longitud de k2
+    // int pos = 0, count = 0, digit = 0, number = 0, fraction = 0, j = 0; // Se declaran variables auxiliares para el método
+    //
+    // while (k2 != 0)
     // {
-    //     k = k / 100;
-    //     k = k % 1000000;
+    //     k2 /= 10;
+    //     ++count;
     // }
-    // else
+    //
+    // k2Len = count;
+    // pos = k2Len / 2;
+    //
+    // if (((pos + 1) + _size) - 1 <= k2Len)
     // {
-    //     k = k / 100;
-    //     k = k % 1000000;
+    //     for (j = 0; j < _size; j++)
+    //     {
+    //         fraction = k2 / (int)pow(10, (k2Len - pos));
+    //         digit = fraction % 10;
+    //         pos++;
+    //         number *= 10;
+    //         number += digit;
+    //     }
     // }
+    //
+    // i = number;
+    //
     // return i; // Se retorna el índice de la tabla hash asignado al elemento
+
     /* Método del plegamiento */
-    // -- Pendiente --
+    // -- Revisar --
+    // int kLen = 0, count = 0, j = 0, l = 0, n = 0;
+    //
+    // while (k != 0)
+    // {
+    //     k /= 10;
+    //     ++count;
+    // }
+    //
+    // kLen = count;
+    // int kArray[kLen];
+    //
+    // for (j = 0; k != 0; j++)
+    // {
+    //     kArray[j] = k % 10;
+    //     k /= 10;
+    // }
+    //
+    // for (n = 0, l = 0; l < kLen; l++)
+    // {
+    //     n += kArray[l];
+    // }
+    //
+    // n += kArray[l];
+    // i = n;
+    //
+    // return n;
+
     /* Resolución de colisiones */
     // -- Pendiente --
 };
