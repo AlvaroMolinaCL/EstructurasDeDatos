@@ -20,15 +20,22 @@ void DLinkedList::add(element_t ele) // Opción para insertar un elemento al fin
     dlNode *aux;                            // Se crea un puntero (o nodo) auxiliar
     aux = (dlNode *)malloc(sizeof(dlNode)); // Se reserva memoria para el nodo auxiliar, con esto se crea un nuevo nodo
     aux->ele = ele;                         // El dato guardado en el nodo auxiliar es asignado al nodo de destino
-    aux->back = nullptr;                    // El anterior del nodo auxiliar es asignado como nulo
-    aux->next = _head;                      // El siguiente del nodo auxiliar es asignado como la nueva cabeza de la lista
-    _head->back = aux;                      // El anterior de la cabeza de la lista es asignada como el nodo auxiliar
-    _head = aux;                            // La cabeza de la lista es asignado como el nodo auxiliar, con esto ya queda insertado el nuevo nodo
-    _size++;                                // Se incrementa el tamaño de la lista
+    aux->next = aux->back = nullptr;        // El siguiente y anterior del nodo auxiliar se inicializan en nulo
+
+    if (_head == nullptr) // Si la lista está vacía
+    {
+        _head = aux; // La cabeza de la lista es asignada al nodo auxiliar
+    }
+
+    _head->back = aux; // El anterior de la cabeza de la lista es asignado al nodo auxiliar
+    aux->next = _head; // El siguiente del nodo auxiliar es asignado a la cabeza de la lista
+    _head = aux;       // La cabeza de la lista es asignada al nodo auxiliar
+    _size++;           // Se incrementa el tamaño de la lista
 };
 
 void DLinkedList::add(element_t ele, index_t i) // Opción para insertar un elemento en una posición específica de la lista
 {
+    /* Revisar */
     dlNode *aux;                              // Se crea un puntero (o nodo) auxiliar
     aux = (dlNode *)malloc(sizeof(dlNode));   // Se reserva memoria para el nodo auxiliar, con esto se crea un nuevo nodo
     aux->ele = ele;                           // El dato guardado en el nodo auxiliar es asignado al nodo de destino
@@ -52,6 +59,7 @@ void DLinkedList::add(element_t ele, index_t i) // Opción para insertar un elem
 
 void DLinkedList::remove() // Opción para eliminar un elemento del final de la lista
 {
+    /* Revisar */
     dlNode *aux;           // Se crea un puntero (o nodo) auxiliar
     aux = _head;           // El nodo auxiliar es asignado como la cabeza de la lista
     _head->back = nullptr; // El anterior de la cabeza de la lista es asignado como nulo
@@ -59,28 +67,23 @@ void DLinkedList::remove() // Opción para eliminar un elemento del final de la 
     _size--;               // Se decrementa el tamaño de la lista
 };
 
-void DLinkedList::remove(element_t ele) // Opción para eliminar un elemento específico de la lista
+void DLinkedList::remove(index_t i) // Opción para eliminar un elemento específico de la lista
 {
-    dlNode *aux;          // Se crea un puntero (o nodo) auxiliar
-    aux = _head;          // El nodo auxiliar es asignado como la cabeza de la lista
-    if (_head == nullptr) // Si la lista no tiene cabeza asignada
+    dlNode *aux1, *aux2;                     // Se crean dos punteros (o nodos auxiliares)
+    aux1 = (dlNode *)malloc(sizeof(dlNode)); // Se reserva memoria para el nodo auxiliar 1
+    aux2 = (dlNode *)malloc(sizeof(dlNode)); // Se reserva memoria para el nodo auxiliar 2
+    aux1 = _head;
+
+    if (_head != nullptr) // Si la lista no está vacía
     {
-        while (aux != nullptr) // Mientras el nodo auxiliar no recorra toda la lista
+        for (int j = 0; j < i - 2; j++) // Ciclo que recorre la lista
         {
-            if (aux->ele == ele) // Si el nodo auxiliar encuentra el elemento a eliminar
-            {
-                /* Queda pendiente implementar validación */
-                dlNode *aux1, *aux2; // Se crean otros dos punteros (o nodos) auxiliares
-                aux1 = aux->back;    // El nodo auxiliar 1 es asignado como el anterior del nodo auxiliar principal
-                aux2 = aux->next;    // El nodo auxiliar 2 es asignado como el siguiente del nodo auxiliar principal
-                aux1->next = aux2;   // El siguiente del nodo auxiliar 1 es asignado como el nodo auxiliar 2
-                aux2->back = aux1;   // El anterior del nodo auxiliar 2 es asignado como el nodo auxiliar 2
-                free(aux);           // Se libera la memoria ocupada en la posición del nodo auxiliar principal, y se elimina el nodo
-                return;              // Se hace un retorno para terminar la función
-            }
-            aux = aux->next; // El nodo auxiliar principal es asignado como su respectivo siguiente
-            _size--;         // Se decrementa el tamaño de la lista
+            aux1 = aux1->next; // El nodo auxiliar 1 es asignado a su respectivo siguiente
         }
+        aux2 = aux1->next;       // El nodo auxiliar 2 es asignado al siguiente del nodo auxiliar 1
+        aux1->next = aux2->next; // El siguiente del nodo auxiliar 1 es asignado al siguiente del nodo auxiliar 2
+        free(aux2);              // Se libera la memoria ocupada en la posición del nodo auxiliar 2, y se elimina el nodo
+        _size--;                 // Se decrementa el tamaño de la lista
     }
 };
 
@@ -112,7 +115,7 @@ element_t DLinkedList::get(index_t i) // Opción para obtener un elemento espec�
     aux = _head;                       // El nodo auxiliar es asignado como la cabeza de la lista
     if (i < _size && _head != nullptr) // Si el índice de la lista es menor que el tamaño de la lista, y la misma no tiene cabeza asignada
     {
-        for (int k = 0; k < 1; k++) // Ciclo
+        for (int k = 0; k < i; k++) // Ciclo
         {
             aux = aux->next; // El nodo auxiliar es asignado como su respectivo siguiente
         }
@@ -145,6 +148,7 @@ bool DLinkedList::contains(element_t ele) // Opción para consultar si un elemen
     }
 };
 
+/*
 void DLinkedList::lastToFront() // Operación implementada desde un ejercicio (no nativa de la lista)
 {
     dlNode *aux;
@@ -179,3 +183,4 @@ void DLinkedList::moveToLast(index_t num) // Operación implementada desde un ej
         aux3->next = aux2;
     }
 };
+*/

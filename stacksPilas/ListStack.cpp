@@ -11,9 +11,9 @@ ListStack::ListStack() // Constructor de la pila
 };
 
 ListStack::~ListStack() // Destructor de la pila
-    {
-        // El destructor se deja en blanco, ya que aquí la pila deja de existir
-    };
+{
+    // El destructor se deja en blanco, ya que aquí la pila deja de existir
+};
 
 void ListStack::push(element_t ele) // Opción para insertar un elemento a la pila
 {

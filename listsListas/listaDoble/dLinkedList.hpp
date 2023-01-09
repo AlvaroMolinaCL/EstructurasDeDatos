@@ -21,12 +21,12 @@ public:
     void add(element_t);          // Opción para insertar un elemento al final de la lista
     void add(element_t, index_t); // Opción para insertar un elemento en una posición específica de la lista
     void remove();                // Opción para eliminar un elemento del final de la lista
-    void remove(element_t);       // Opción para eliminar un elemento específico de la lista
+    void remove(index_t);         // Opción para eliminar un elemento específico de la lista
     index_t size();               // Opción para conocer el tamaño de la lista
     bool empty();                 // Opción para consultar si la lista está vacía o no
     element_t get();              // Opción para obtener el primer elemento de la lista
     element_t get(index_t);       // Opción para obtener un elemento específico de la lista
     bool contains(element_t);     // Opción para consultar si un elemento existe o no en la lista
-    void lastToFront();           // Operación implementada desde un ejercicio (no nativa de la lista)
-    void moveToLast(index_t);     // Operación implementada desde un ejercicio (no nativa de la lista)
+    // void lastToFront();           // Operación implementada desde un ejercicio (no nativa de la lista)
+    // void moveToLast(index_t);     // Operación implementada desde un ejercicio (no nativa de la lista)
 };
