@@ -1,4 +1,4 @@
-/* Ejemplo de uso del árbol binario de búsqueda (se usa como ejemplo el árbol de la imagen ejemploSBT.png)*/
+/* Ejemplo de uso del árbol binario de búsqueda (se usa como ejemplo el árbol de la imagen ejemploSBT.png) */
 
 #include <iostream>
 #include "SBinaryTree.hpp"

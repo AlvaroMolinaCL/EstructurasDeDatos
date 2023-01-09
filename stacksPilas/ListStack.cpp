@@ -11,9 +11,9 @@ ListStack::ListStack() // Constructor de la pila
 };
 
 ListStack::~ListStack() // Destructor de la pila
-{
-    // El destructor se deja en blanco, ya que aquí la pila deja de existir
-};
+    {
+        // El destructor se deja en blanco, ya que aquí la pila deja de existir
+    };
 
 void ListStack::push(element_t ele) // Opción para insertar un elemento a la pila
 {
@@ -43,6 +43,39 @@ int ListStack::size() // Opción para conocer el tamaño de la pila
 {
     return _size; // Se retorna el tamaño de la pila
 };
+
+/*
+int ListStack::size() // Forma alternativa de obtener el tamaño de la pila, prescindiendo del atributo global _size
+{
+    sNode *aux;         // Se crea un puntero (o nodo) auxiliar
+    aux = _top;         // El nodo auxiliar apunta al tope de la pila
+    int _size = 0;      // Se inicializa _size en 0
+    if (aux == nullptr) // Si la pila está vacía
+    {
+        return _size; // Se retorna el tamaño de la pila (que en este caso será igual a 0)
+    }
+    else
+    {
+        while (aux != nullptr) // Mientras no se termine de recorrer la pila
+        {
+            _size++;         // Si existe al menos un elemento, se incrementa el tamaño
+            aux = aux->next; // Se mueve el puntero auxiliar al siguiente nodo, y se repite el proceso
+        }
+        return _size; // Se retorna el tamaño de la pila
+    }
+};
+*/
+
+/*
+void ListStack::print() // Opción para imprimir por pantalla los datos que contiene la pila
+{
+    while (_top != nullptr) // Mientras el tope de la pila no sea nulo
+    {
+        std::cout << _top->ele << "\t"; // Se imprime el elemento del tope de la pila
+        _top = _top->next;              // El tope de la pila es asignado como su respectivo siguiente, y se repite el paso anterior
+    }
+};
+*/
 
 bool ListStack::empty() // Opción para consultar si la pila está vacía o no
 {
