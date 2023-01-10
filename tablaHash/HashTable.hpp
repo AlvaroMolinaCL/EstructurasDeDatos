@@ -2,7 +2,7 @@
 
 #include "iHash.hpp"
 
-#define MAX 1000    // Aquí se define el tamaño máximo de la tabla hash (se denota también como "m")
+#define MAX 10000    // Aquí se define el tamaño máximo de la tabla hash (se denota también como "m")
 #define R 0.6180334 // Constante decimal
 
 class HashTable : public iHash // Aquí se hereda el contrato de la tabla hash y se definen sus operaciones
