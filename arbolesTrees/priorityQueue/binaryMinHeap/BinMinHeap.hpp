@@ -17,8 +17,9 @@ public:
     element_t removeMin();         // Opción que elimina el elemento mínimo del montículo binario
     void downHeap(int);            // Operación que permite realizar heap a un subárbol con la raíz en el índice dado
     void remove(int);              // Opción que elimina un elemento específico del montículo mínimo binario
-    element_t min();               // Opción que retorna la raíz del montículo mínimo binario
+    element_t getMin();            // Opción que retorna la raíz del montículo mínimo binario
     int parent(int);               // Opción que retorna el padre a partir de un índice dado
     int left(int);                 // Opción que retorna el hijo izquierdo a partir de un índice dado
     int right(int);                // Opción que retorna el hijo derecho a partir de un índice dado
+    int size();
 };

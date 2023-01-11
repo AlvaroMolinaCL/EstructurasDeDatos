@@ -16,9 +16,9 @@ int main(int argc, char const *argv[])
 	myHeap->insert(23);
 
     std::cout << myHeap->removeMin() << " ";
-	std::cout << myHeap->min() << " ";
+	std::cout << myHeap->getMin() << " ";
 	myHeap->decrease(2, 3);
-	std::cout << myHeap->min();
+	std::cout << myHeap->getMin();
     std::cout << std::endl;
 
     return 0;

@@ -20,12 +20,12 @@ BinMinHeap::BinMinHeap(int c) // Constructor del montículo mínimo binario
 
 BinMinHeap::~BinMinHeap() // Destructor del montículo mínimo binario
 {
-    // El destructor se deja vacío
+    free(heapArray);
 };
 
 void BinMinHeap::insert(element_t ele) // Opción que inserta un nuevo elemento al montículo mínimo binario
 {
-    if (_size != capacity)
+    if (_size != capacity) // Si el montículo no está al máximo de su capacidad
     {
         _size++; // Se incrementa el tamaño del montículo
         int i = _size - 1;
@@ -96,7 +96,7 @@ void BinMinHeap::remove(int i) // Opción que elimina un elemento específico de
     removeMin();
 };
 
-element_t BinMinHeap::min() // Opción que retorna la raíz del montículo mínimo binario
+element_t BinMinHeap::getMin() // Opción que retorna la raíz del montículo mínimo binario
 {
     return heapArray[0]; // Se retorna la raíz del montículo mínimo binario (que siempre está en la posición 0 del arreglo)
 };
@@ -114,4 +114,9 @@ int BinMinHeap::left(int i) // Opción que retorna el hijo izquierdo a partir de
 int BinMinHeap::right(int i) // Opción que retorna el hijo derecho a partir de un índice dado
 {
     return (2 * i + 2); // Se retorna el hijo derecho a partir del índice dado
+};
+
+int BinMinHeap::size()
+{
+    return _size;
 };
