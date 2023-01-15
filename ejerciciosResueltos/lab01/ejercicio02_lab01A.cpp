@@ -10,29 +10,29 @@ int main(int argc, char const *argv[])
 {
     int numero;
 
-    std::cout << "Ingrese un numero" << '\n';
+    std::cout << "Ingrese un numero" << std::endl;
     std::cin >> numero;
 
     if (numero % 2 == 0)
     {
         if (numero >= 0)
         {
-            std::cout << "El numero es par positivo" << '\n';
+            std::cout << "El numero es par positivo" << std::endl;
         }
         else
         {
-            std::cout << "El numero es par negativo" << '\n';
+            std::cout << "El numero es par negativo" << std::endl;
         }
     }
     else
     {
         if (numero >= 0)
         {
-            std::cout << "El numero es impar positivo" << '\n';
+            std::cout << "El numero es impar positivo" << std::endl;
         }
         else
         {
-            std::cout << "El numero es impar negativo" << '\n';
+            std::cout << "El numero es impar negativo" << std::endl;
         }
     }
     return 0;

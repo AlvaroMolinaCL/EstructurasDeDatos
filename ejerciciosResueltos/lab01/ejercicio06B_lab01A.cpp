@@ -1,7 +1,7 @@
 /*
-Ejemplo 03B: Potencia de un número mediante función por referencia
+Ejercicio 06B - Laboratorio 1A
 
-Compilar con g++ ejemplo03B_potenciaReferencia.cpp -o ejemplo03B_potenciaReferencia.exe
+Se solicita realizar la función potencia mediante el paso de parámetros por referencia.
 */
 
 #include <iostream>

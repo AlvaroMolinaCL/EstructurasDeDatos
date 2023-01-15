@@ -1,7 +1,7 @@
 /*
-Ejemplo 03A: Potencia de un número mediante función por valor
+Ejercicio 06A - Laboratorio 1A
 
-Compilar con g++ ejemplo03A_potenciaValor.cpp -o ejemplo03A_potenciaValor.exe
+Se solicita realizar la función potencia mediante el paso de parámetros por valor.
 */
 
 #include <iostream>
