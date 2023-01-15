@@ -14,9 +14,9 @@ int main(int argc, char const *argv[])
     myList->add(9); // 0
     myList->remove(2);
 
-    std::cout << "El tamano de la lista es: " << myList->size() << std::endl;
+    std::cout << "El tama" << char(164) << "o de la lista es: " << myList->size() << std::endl;
     std::cout << "El primer elemento de la lista es: " << myList->get() << std::endl;
-    std::cout << "El elemento contenido en el indice 2 de la lista es: " << myList->get(2) << std::endl;
+    std::cout << "El elemento contenido en el " << char(161) << "ndice 2 de la lista es: " << myList->get(2) << std::endl;
 
     return 0;
 }

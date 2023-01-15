@@ -19,9 +19,9 @@ int main(int argc, char const *argv[])
     myList.pop_back();
     myList.pop_front();
 
-    std::cout << "El tamano de la lista es: " << myList.size() << std::endl;
+    std::cout << "El tama" << char(164) << "o de la lista es: " << myList.size() << std::endl;
     std::cout << "El frente de la lista es: " << myList.front() << std::endl;
-    std::cout << "El ultimo de la lista es: " << myList.back() << std::endl;
+    std::cout << "El " << char(163) << "ltimo de la lista es: " << myList.back() << std::endl;
 
     return 0;
 }

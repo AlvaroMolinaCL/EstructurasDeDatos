@@ -19,9 +19,9 @@ int main(int argc, char const *argv[])
     myQueue.pop();
     myQueue.pop();
 
-    std::cout << "El tamano de la fila es: " << myQueue.size() << std::endl;
+    std::cout << "El tama" << char(164) << "o de la fila es: " << myQueue.size() << std::endl;
     std::cout << "El frente de la fila es: " << myQueue.front() << std::endl;
-    std::cout << "El ultimo de la fila es: " << myQueue.back() << std::endl;
+    std::cout << "El " << char(163) << "ltimo de la fila es: " << myQueue.back() << std::endl;
 
     return 0;
 }

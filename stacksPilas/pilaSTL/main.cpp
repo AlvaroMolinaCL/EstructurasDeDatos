@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     myStack.pop();
     myStack.pop();
 
-    std::cout << "El tamano de la pila es: " << myStack.size() << std::endl;
+    std::cout << "El tama" << char(164) << "o de la pila es: " << myStack.size() << std::endl;
     std::cout << "El tope de la pila es: " << myStack.top();
 
     /*

@@ -16,8 +16,8 @@ int main(int argc, char const *argv[])
     myHashTable->remove(3876);
     myHashTable->remove(6476);
 
-    std::cout << "El tamano de la tabla hash es: " << myHashTable->size() << std::endl;
-    std::cout << "La tabla hash esta vacia? (0 = Falso / 1 = Verdadero): " << myHashTable->empty() << std::endl;
+    std::cout << "El tama" << char(164) << "o de la tabla hash es: " << myHashTable->size() << std::endl;
+    std::cout << char(168) << "La tabla hash esta vac" << char(161) << "a? (0 = Falso / 1 = Verdadero): " << myHashTable->empty() << std::endl;
 
     return 0;
 }
